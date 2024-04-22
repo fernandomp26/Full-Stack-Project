@@ -13,4 +13,4 @@ Nosso projeto tem como tema os seguintes tópicos:
 - COMPUTADOR (id, marca, processador, quantidade de RAM, tamanho do disco)
 - CIDADE (id, nome, estado, país, população)
 
-Teremos que usar Java com SpringBoot para criar Api's dos temas acima e guardar todas as ocorrências em um Banco de Dados.
+Usamos o framework Spring Boot para criar as Api's dos temas acima e guardamos todas as ocorrências em um Banco de Dados.
