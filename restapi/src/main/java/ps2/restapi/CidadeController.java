@@ -28,7 +28,7 @@ class CidadeController {
 	}
 	
 	@GetMapping("/api/cidades/{id}")
-	Optional<Cidade> getCidade(@PathVariable UUID id) {
+	Optional<Cidade> getCidade(@PathVariable int id) {
 		for (Cidade c : cidades) {
 			if (c.getId() == id) {
 				return Optional.of(c);
@@ -39,13 +39,17 @@ class CidadeController {
 	
 	@PostMapping("/api/cidades")
 	Cidade createCidade(@RequestBody Cidade c) {
-		c.setId(UUID.randomUUID());
+		maxId = 1;
+		for(int i = 0; i < cidades.lenght(); i++) {
+			maxId++;
+		}
+		c.setId(maxId);
 		cidades.add(c);
 		return c;
 	}
 	
 	@PutMapping("/api/cidades/{professorId}")
-	Optional<Cidade> updateCidade(@RequestBody Cidade cidadeRequest, @PathVariable UUID cidadeId) {
+	Optional<Cidade> updateCidade(@RequestBody Cidade cidadeRequest, @PathVariable int cidadeId) {
 		Optional<Cidade> opt = this.getCidade(cidadeId);
 		if (opt.isPresent()) {
 			Cidade cidade = opt.get();
@@ -57,10 +61,16 @@ class CidadeController {
 		return opt;				
 	}	
 	
-	@DeleteMapping(value = "/api/cidades/{id}")
-	void deleteCidade(@PathVariable UUID id) {
-		cidades.removeIf(c -> c.getId() == id);
-	}		
+	@DeleteMapping("/api/cidades/{id}")
+	void deleteCidade(@PathVariable int id) {
+		for(Cidade c : cidades) {
+			if(c.getId() == id) {
+				cidades.remove(c);
+				return;
+			}
+		} 
+	}	
+	
 }
 
 
