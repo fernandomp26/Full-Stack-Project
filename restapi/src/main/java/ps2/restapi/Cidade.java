@@ -1,9 +1,7 @@
 package ps2.restapi;
 
-import java.util.UUID;
-
 public class Cidade {
-	private UUID id;
+	private int id;
 	private String nome;
 	private String estado;
 	private String pais;
@@ -18,11 +16,11 @@ public class Cidade {
 		this.populacao = p;
 	}
 
-	public UUID getId() {
+	public int getId() {
 		return id;
 	}
 
-	public void setId(UUID id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 
