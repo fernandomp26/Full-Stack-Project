@@ -38,8 +38,8 @@ class CidadeController {
 	
 	@PostMapping("/api/cidades")
 	Cidade createCidade(@RequestBody Cidade c) {
-		maxId = 1;
-		for(int i = 0; i < cidades.lenght(); i++) {
+		int maxId = 1;
+		for(int i = 0; i < cidades.size(); i++) {
 			maxId++;
 		}
 		c.setId(maxId);
