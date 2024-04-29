@@ -7,7 +7,7 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "carros")
-public class carro{
+public class Carro{
     @Id @GeneratedValue
     private int id;
 
@@ -16,7 +16,7 @@ public class carro{
     private int year;
     private String category;
 
-    public carro() {
+    public Carro() {
         super();
     }
 
@@ -59,6 +59,5 @@ public class carro{
     public void setCategory( String category){
         this.category = category;
     }
-
 
 }

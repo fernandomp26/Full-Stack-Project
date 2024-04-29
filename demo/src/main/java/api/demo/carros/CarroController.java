@@ -13,30 +13,30 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
 
 @RestController
-public class carroController {
+public class CarroController {
 
     @Autowired
-    private carroRepo carroRepo;
+    private CarroRepo carroRepo;
 
     @GetMapping("/api/carros")
-	Iterable<carro> getCarro() {
+	Iterable<Carro> getCarro() {
 		return carroRepo.findAll();
 	}
 	
 	@GetMapping("/api/carros/{id}")
-	Optional<carro> getCarro(@PathVariable int id) {
+	Optional<Carro> getCarro(@PathVariable int id) {
 		return carroRepo.findById(id);
 	}
 	
 	@PostMapping("/api/carros")
-	carro createCarro(@RequestBody carro c) {
-		carro createdCarro = carroRepo.save(c);
+	Carro createCarro(@RequestBody Carro c) {
+		Carro createdCarro = carroRepo.save(c);
 		return createdCarro;
 	}
 	
 	@PutMapping("/api/carros/{carroId}")
-	Optional<carro> updateCarro(@RequestBody carro carroRequest, @PathVariable int carroId) {
-		Optional<carro> opt = carroRepo.findById(carroId);
+	Optional<Carro> updateCarro(@RequestBody Carro carroRequest, @PathVariable int carroId) {
+		Optional<Carro> opt = carroRepo.findById(carroId);
 		if (opt.isPresent()) {
 			if (carroRequest.getId() == carroId) {
 				carroRepo.save(carroRequest);
