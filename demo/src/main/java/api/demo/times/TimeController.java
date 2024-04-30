@@ -30,8 +30,8 @@ public class TimeController {
 	}
 	
 	@PostMapping("/api/times")
-	Time createTime(@RequestBody Time c) {
-		Time createdTime = TimeRepo.save(c);
+	Time createTime(@RequestBody Time t) {
+		Time createdTime = TimeRepo.save(t);
 		return createdTime;
 	}
 	
