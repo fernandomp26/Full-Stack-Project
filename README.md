@@ -12,5 +12,3 @@ Nosso projeto tem como tema os seguintes tópicos:
 - CARRO (id, modelo, marca, ano, categoria)
 - COMPUTADOR (id, marca, processador, quantidade de RAM, tamanho do disco)
 - CIDADE (id, nome, estado, país, população)
-
-Usamos o framework Spring Boot para criar as Api's dos temas acima e guardamos todas as ocorrências em um Banco de Dados.
