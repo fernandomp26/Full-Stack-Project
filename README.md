@@ -1,4 +1,4 @@
-# Projeto PSII - Spring Boot com Interface em Next.JS e Tailwind
+# Projeto PSII - Spring Boot com Interface em Next.JS e TailwindCSS
 ### Componentes do grupo: 
 - Fernando Morales Peres - 10418554
 - Antônio César - 10418522
